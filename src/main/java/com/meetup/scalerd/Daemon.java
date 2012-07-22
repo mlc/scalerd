@@ -1,5 +1,6 @@
 package com.meetup.scalerd;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -89,7 +90,7 @@ public class Daemon implements Runnable {
                 log.debug(args);
                 getChannel().basicAck(deliveryTag, false);
                 acked = true;
-                ListenableFuture<byte[]> read = readService.submit(new ImageReadTask(args.getUri()));
+                ListenableFuture<BufferedImage> read = readService.submit(new ImageReadTask(args.getUri()));
                 Futures.addCallback(read, new ImageScaleTask(connection, properties.getReplyTo(), args.getOperations()), scaleService);
             } catch (Exception ex) {
                 log.warn("exception in handleDelivery", ex);
