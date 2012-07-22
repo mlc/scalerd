@@ -1,0 +1,3 @@
+amqp.uri = amqp://user:password@host/vhost
+amqp.exchange = rpc
+amqp.queue = scale
