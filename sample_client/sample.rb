@@ -26,9 +26,12 @@ EventMachine.run do
   AMQP::Channel.new(connection) do |channel|
     exchange = channel.direct(exchange_name, :durable => true, :auto_delete => false)
     channel.queue '', :auto_delete => true do |reply_queue|
+      start = Time.now
       message = MultiJson.dump({:uri => uri, :operations => operations})
       reply_queue.subscribe do |headers, payload|
+        finish = Time.now
         $stderr.puts headers.content_type
+        $stderr.puts "finished in #{finish - start} seconds"
         $stdout << payload
         EventMachine.stop { exit }
       end
