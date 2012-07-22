@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-1.9.2-p290 [global]" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="amq-client (v0.9.4, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="amq-protocol (v0.9.4, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="amqp (v0.9.7, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.18, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="eventmachine (v0.12.10, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.0.4, RVM: ruby-1.9.2-p290 [global]) [gem]" level="application" />
+  </component>
+</module>
+

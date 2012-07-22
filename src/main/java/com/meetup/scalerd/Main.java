@@ -7,6 +7,7 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        //final boolean verbose = (args.length == 1 && "-verbose".equals(args[0]));
         Properties props = new Properties();
         FileReader in = null;
         try {
@@ -19,5 +20,6 @@ public class Main {
         cf.setUri(props.getProperty("amqp.uri"));
         Daemon daemon = new Daemon(cf, props.getProperty("amqp.exchange"), props.getProperty("amqp.queue"));
         daemon.run();
+        System.exit(0);
     }
 }
