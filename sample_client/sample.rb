@@ -28,7 +28,8 @@ EventMachine.run do
     channel.queue '', :auto_delete => true do |reply_queue|
       message = MultiJson.dump({:uri => uri, :operations => operations})
       reply_queue.subscribe do |headers, payload|
-        puts payload
+        $stderr.puts headers.content_type
+        $stdout << payload
         EventMachine.stop { exit }
       end
       exchange.publish message, :routing_key => queue_name, :content_type => 'application/json', :reply_to => reply_queue.name
